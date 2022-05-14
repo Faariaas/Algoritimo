@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>normal</title>
+</head>
+<body>
+<center>
+    <div>
+        <input type="text" id="ipt_nome" placeholder="insira o nome do meliante">
+        <button onclick="cad()">Cadastrar</button> <br>
+        <button onclick="mostrar()">Mostrar</button>
+    </div>
+    <div id="div_msg"></div>
+</center>
+</body>
+</html>
+<script>
+    var vt_aluno = [];
+
+    function cad() {
+        var aluno = ipt_nome.value;
+
+        vt_aluno.push(aluno)
+        ipt_nome.value = ''
+    }
+    function mostrar() {
+        div_msg.innerHTML = `${vt_aluno} <br>`
+
+
+        for (var index = 0; index < vt_aluno.length; index++) {
+            div_msg.innerHTML += `${index+1}, ${vt_aluno[index]}<br>`;         
+        }
+    }
+</script>

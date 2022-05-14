@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOCHILÃO</title>
+</head>
+<body>
+    <div>
+        <h3>Mochilão de Farias</h3>
+        <br>
+        Destino da Viagem:
+        <br>
+        <input type="text" id="ipt_viagem" placeholder="Pra onde vai hj patroa?">
+        <button onclick="add()">Adicionar</button>
+        <br>
+        <button onclick="first()">Primeira viagem</button>
+        <button onclick="third()">Terciera viagem</button>
+        <button onclick="last()">Ultima viagem</button>
+    </div>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var vt_viagem = [];
+
+    function add() {
+        vt_viagem.push(ipt_viagem.value)
+        ipt_viagem.value = ''
+    }
+    function first() {
+        if (vt_viagem.length-1 < 0) {
+            div_msg.innerHTML = `Ainda nao viajou`
+        } else {
+            div_msg.innerHTML = `${vt_viagem[0]}`
+        }
+    }
+    function third() {
+        if (vt_viagem.length-1 < 2) {
+            div_msg.innerHTML = `Ainda nao fez a terceira viagem`
+        } else {
+            div_msg.innerHTML = `${vt_viagem[2]}`
+        }
+    }
+    function last() {
+        if (vt_viagem.length-1 < 0) {
+            div_msg.innerHTML = 'ainda nao viajou'
+        } else {
+            div_msg.innerHTML = `${vt_viagem[vt_viagem.length-1]}`
+        }
+    }
+</script>
