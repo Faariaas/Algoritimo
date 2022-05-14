@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO 19</title>
+</head>
+<body>
+    
+    <div>
+        <div>
+            <input type="text" id="ipt_cabem" placeholder="Quantos cabem no carro?">
+            <input type="text" id="ipt_qtd" placeholder="quantos vao?">
+            <button onclick="btn_carona()">#Partiu Carona</button>
+        </div>
+        <div id="div_msg"></div>
+    </div>
+
+</body>
+</html>
+<script>
+    var Passageiro = 0
+
+    function btn_carona() {
+        var Cabem = Number(ipt_cabem.value);
+        var limite = Number(ipt_qtd.value);
+        Passageiro = 0
+        // div_msg.innerHTML = '';
+
+        while (Passageiro <= limite) {
+            if (Passageiro == 1) {
+                div_msg.innerHTML += `Entrou a ${Passageiro}º passageiro(que é o(a) motorista)`;
+            }
+            if (Passageiro > 1 && Passageiro < Cabem) {
+                div_msg.innerHTML += `<br>Entrou a ${Passageiro}º passageiro`;
+            }
+            if (limite > cabem) {
+                div_msg.innerHTML += `<br>O ${Passageiro}º passageiro tera q esperar`;
+            }
+        partida ++;
+        }
+    }
+</script>

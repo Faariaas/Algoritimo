@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO 8</title>
+</head>
+<body>
+<!--
+7.	Crie um programa o qual:
+    a) Tenha um botão "Boas vindas no alerta". Ao clicar nele, aparece um alert na página com alguma mensagem de boas vindas
+    b) Tenha um botão "Boas vindas na página". Ao clicar nele, aparece na própria página, abaixo dos botões alguma mensagem de boas vindas
+
+8.	Refaça o programa da questão anterior de tal forma que a mensagem do item b) apareça com uma cor de fundo preta e cor de letra amarela.
+-->
+<center>
+        <h3>BOAS VINDAS</h3>
+        <br><br><br>
+
+        <button onclick="alertA()">BOAS VINDAS ALERTA</button>
+        <button onclick="pagina()">BOAS VINDAS PAGINA</button><br>
+        <br><br><br>
+        <span id="spantext" style="color: yellow; background-color: black;"><span></span></span>
+</center>
+</body>
+</html>
+<script>
+        function alertA() {
+            alert ("SEJA BEM VINDO A ESSA PAGINA")
+        }
+        function pagina() {
+            spantext.innerHTML = 'SEJA BEM VINDO AO MEU MUNDO!!!'
+        }
+</script>

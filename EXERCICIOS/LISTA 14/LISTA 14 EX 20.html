@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO 20</title>
+</head>
+<body>
+    
+    <div>
+        <div>
+            <input type="text" id="ipt_bus" placeholder="Quantos buzão?">
+            <input type="text" id="ipt_trem" placeholder="quantos Trens?">
+            <input type="text" id="ipt_metro" placeholder="quantos Metro?">
+            <button onclick="btn_trajeto()">#Partiu Trajeto</button>
+        </div>
+        <div id="div_msg"></div>
+    </div>
+
+</body>
+</html>
+<script>
+    var ax_cont = 0
+
+    function btn_trajeto() {
+        var busao = Number(ipt_bus.value);
+        var trem = Number(ipt_trem.value);
+        var metro = Number(ipt_metro.value);
+        ax_cont = 1
+        div_msg.innerHTML = '';
+
+        while (ax_cont <= busao){
+        if (ax_cont <= busao) {
+            div_msg.innerHTML += `<br>Pegando ${ax_cont}º buzão`;
+        }}
+        while (ax_cont <= trem){
+        if (ax_cont <= trem) {
+            div_msg.innerHTML += `<br>Pegando ${ax_cont}º trem`;
+        }}
+        while (ax_cont <= metro){
+        if (ax_cont <= metro) {
+            div_msg.innerHTML += `<br>Pegando ${ax_cont}º metro`;
+        }}
+        ax_cont ++;
+    }
+</script>

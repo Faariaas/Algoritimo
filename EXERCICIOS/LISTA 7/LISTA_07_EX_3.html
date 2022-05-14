@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lista.css">
+</head>
+<body>
+<!--
+3. O Mercado BOM DOCE está em promoção, qualquer chocolate custa R$ 3,00 cada e se a compra for acima de uma dúzia de chocolates o preço cai para R$ 2,50 cada um. Criar um programa que auxilie o Mercado a calcular o valor da compra de chocolate.
+    a) Solicite a quantidade de chocolates comprados;
+    b) Após clicar num botão "Compra", exiba a mensagem "o valor da sua compra foi de xxxxxx,xx".-->
+<div class=box>
+    Quantos chocolates vc ta comprando?         <br><br>
+    <input type="text" id="ipt_choco">          <br>
+    <button onclick="compra()">Compra</button>  <br><br>
+    <div id="msg_div"></div>
+</div>
+</body>
+</html>
+<script>
+    function compra() {
+        var ax_cho = ipt_choco.value
+
+        if (ax_cho > 12) {
+            msg_div.innerHTML = (`O valor total da sua compra com descontos foi foi de R$${ax_cho * 2.50}`)
+        } else {
+            msg_div.innerHTML = (`O valortotal da sua compra deu R$${ax_cho * 3}`)
+        }
+    }
+</script>

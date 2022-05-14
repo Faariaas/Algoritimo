@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <select name="" id="sel_arroz">
+            <option value="0">--SELECIONE--</option>
+            <option value="1">ARROZ INTEGRAL</option>
+            <option value="2">ARROZ BRANCO</option>
+        </select><br>
+        <input type="text" id="ipt_tempo" placeholder="tempo de cozimento"><br>
+        <input type="text" id="ipt_sal" placeholder="Quantidade de sal"><br>
+        <button onclick="avaliar()">-- AVALIAR ARROZ --</button>
+    </div>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function avaliar(params) {
+        var arroz = sel_arroz.value
+        var tempo = ipt_tempo.value
+        var sal = ipt_sal.value
+
+
+        if (arroz == 1 && tempo == 10 && sal <= 10 || arroz == 2 && tempo == 20 && sal <= 15) {
+            div_msg.innerHTML = 'ARROZ PERFEITO'
+        } else {
+            div_msg.innerHTML = 'Seu arroz ta ruim!!!'
+        }
+    }
+</script>

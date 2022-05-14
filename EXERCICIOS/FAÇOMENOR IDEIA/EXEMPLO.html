@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAO FICOU NN</title>
+</head>
+<body>
+    <center>
+    <h3>Exemplo</h3>
+    <span id="spantext">TEM UM SEGREDO CABULOSO AQ </span>
+    <br><br><br><br>
+    <button onclick="testar()">Contar um segredo</button>
+    <button onclick="apagar()">apagar</button>
+    </center>
+    <!--
+        https://i.pinimg.com/originals/b7/fb/80/b7fb80122cf46d0e584f3a0768aef282.gif
+        EU DOU O <b style="color: palevioletred;">👌
+    -->
+</body>
+</html> 
+<script>
+    function testar() {
+        spantext.innerHTML += '<br><img src="https://i.pinimg.com/originals/b7/fb/80/b7fb80122cf46d0e584f3a0768aef282.gif" alt="" width="100px">';
+    }
+    function apagar(){
+        spantext.innerHTML = '';
+    }
+</script>

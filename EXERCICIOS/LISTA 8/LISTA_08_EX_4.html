@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista 8 ex 4</title>
+</head>
+<body>
+<!--
+    4. Uma nutróloga e quer um programa que a ajude a avaliar o peso de crianças de 5 anos. Crie para ela um programa que, ao ler o peso de uma criança de 5 anos, exibe uma dessas frases
+    ⦁	Abaixo do peso (se peso até 13.5kg)
+    ⦁	Acima do peso (se peso maior que 21.2kg)
+    ⦁	Peso na média (se peso maior que 13.5kg até 21.2kg)
+    ⦁	Peso perfeito (se o peso for exatamente 18.3kg)
+-->
+<div>
+    <div>
+        <div>
+            <h2>NUTIROLOGIA</h2>
+            <h4>Qual o peso da criança</h4>
+            <input type="text" id="ipt_peso" placeholder="Quantos Kg?">
+            <button onclick=analisar()>Ver a Méda</button>
+        </div>
+        <div id="div_text"></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var ax_peso = ipt_peso.value
+        if (ax_peso == 18.3) {
+            div_text.innerHTML = 'Esse bebe ta Perfeito'
+        } else if (ax_peso <= 13.5) {
+            div_text.innerHTML = 'Falta Mucilon'
+        } else if (ax_peso <=21.2) {
+            div_text.innerHTML = 'Ta na média'
+        } else if (ax_peso > 21.2) {
+            div_text.innerHTML = 'Ta poha MadinBoo!!'
+        }
+    }
+</script>

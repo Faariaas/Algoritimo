@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+11.(Desafio) Faça um programa que simule um cofrinho.
+    a)	Tenha uma select box com os valores atuais de moeda.
+    b)	Abaixo tenha as frases: 
+        •	“O saldo do cofrinho é de: R$ 99,99”
+        •	“A quantidade de operações foi: 99”
+        •	“Média dos depósitos: R$ 99,99”
+    c)	Tenha um botão “Depositar” que ao clicar soma o valor da moeda no saldo do cofrinho e adiciona 1 a quantidade de operações.
+    d)	Tenha um botão “Gastar a Grana” que zera o valor do cofrinho, a quantidade de operações e a média dos depósitos.
+    #ficaadica1 – Use variável global
+    #ficaadica2 – Não esqueça o tratamento de números (incluindo casas decimais).
+-->
+<center>
+    <select id="sel_moedas">
+        <option value="0.05">5 cantavos</option>
+        <option value="0.10">10 centavos</option>
+        <option value="0.25">25 centavos</option>
+        <option value="0.50">50 centavos</option>
+        <option value="1">1 real</option>
+    </select><br><br>
+    <button onclick="Deposito()">Depositar</button>
+    <button onclick="Gasto()">Gastar TODA grana</button>
+    <br><br>
+    Saldo do cofrinho é de R$ <b id="b_saldo">0</b><br>
+    Quantidade de operações: <b id="b_oper">0</b><br>
+    Média de depositos R$ <b id="b_media">0</b><br>
+</center>
+</body>
+</html>
+<script>
+    var ax_deposito = 0;
+    var ax_valor = 0;
+
+    function Deposito() {
+        ax_deposito ++;
+        ax_valor = ax_valor + Number(sel_moedas.value);
+        b_saldo.innerHTML = ax_valor;
+        b_oper.innerHTML = ax_deposito;
+        b_media.innerHTML = (ax_valor / ax_deposito).toFixed(2)
+    }
+    function Gasto() {
+        ax_deposito = 0
+        ax_valor = 0
+        b_saldo.innerHTML = 0;
+        b_oper.innerHTML = 0;
+        b_media.innerHTML = 0;
+    }
+</script>

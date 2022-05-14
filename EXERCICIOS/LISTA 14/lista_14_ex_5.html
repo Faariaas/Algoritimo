@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    <button onclick="mostrar()">NUmeros Cabalisticos</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        
+        var ax_numero = 0
+
+        while (ax_numero < 15) {
+
+            ax_numero++;
+
+            // div_msg.innerHTML += `<br>${ax_numero}`;
+
+            if (ax_numero !== 3 && ax_numero !== 4 && ax_numero !== 7 && ax_numero !== 10 && ax_numero !== 12) {
+
+                div_msg.innerHTML += `<br>${ax_numero}`;
+
+            }
+            
+            // ax_numero++;
+
+        }
+    }
+
+</script>

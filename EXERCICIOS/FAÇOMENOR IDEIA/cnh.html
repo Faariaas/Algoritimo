@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input id="ipt_cnh" placeholder="QUANTOS PONTOS SE TEM IRMÃO?">
+<button onclick="verifi()">VERIFICAR</button>
+<br><br>
+<div></div>
+</body>
+</html>
+<script>
+    function verifi(){
+        var ax_cnh = ipt_cnh.value
+        if (ax_cnh > 20) {
+            alert ("Voce esta com a CNH suspensa")
+        }
+
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova ex 3</title>
+</head>
+<body>
+   <h1>BANCA DE BANANAS <br> ANANAB</h1>
+   <input id="ipt_nanas" placeholder="Quantidade de bananas"><br><br>
+   <button onclick="prata()">BANANA PRATA</button>
+   <button onclick="nanica()">BANANA NANICA</button>
+   <br><br><br>
+   <div id="txtr"></div>
+<!-- 
+.___.  AU AU!
+{O,O} /
+|)___)
+-"---"-
+'
+'							
+-->
+</body>
+</html>
+<script>
+    function prata() {
+        alert(`Você comprou ${ipt_nanas.value} unidades de Banana prata e o custo total é R$${Number(ipt_nanas.value)*0.60}`)
+    }
+    function nanica() {
+        alert(`Você comprou ${ipt_nanas.value} unidades de Banana nanica e o custo total é R$${Number(ipt_nanas.value)*0.50}`)
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinheiro</title>
+</head>
+
+<body>
+    <center>
+        <h1>Money</h1>
+        <div>
+            <img src="https://static.vix.com/pt/sites/default/files/styles/4x3/public/bbr/dinheiro-voando-pesquisa-pobre.jpg" alt=""
+                style="width: 200px; height: 200px;">
+        </div>
+        QUANTO DINHEIRO TERA EM 6 MESES:
+        <input id="ipt_mes"><br>
+        QUANTO DINHEIRO TERA EM 3 ANOS:
+        <input id="ipt_anos"><br>
+        <br><br><br>
+        <button onclick="futuro()">COMO ESTAREI NO FUTURO</button>
+        <br><br><br><br>
+        <div id="spantext"><span></span></div>
+    </center>
+</body>
+
+</html>
+<script>
+    function futuro() {
+        spantext.innerHTML = `<br> <img src="https://i.pinimg.com/474x/e7/68/d9/e768d90d21a023d931547936ef594037.jpg" alt="" width="200px"> R$${ipt_mes.value} <br>`
+        spantext.innerHTML += `<img src="https://c.tenor.com/6Hixx4SFAeQAAAAM/backing-you-get-yours.gif" alt="" width="200px"> R$${ipt_anos.value} <br>`
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista 08 ex 7</title>
+</head>
+<body>
+<!--
+7. Crie um programa o qual:
+    a) Solicite o valor que o usuário tem economizado
+    b) Ao clicar em "Poder de compra", exibir uma ou várias frases abaixo do dele, conforme estas regras:
+        b.1) Caso o valor economizado seja igual ou menor que 0: Exibir SOMENTE a frase Nada de compras :(
+        b.2) Caso o valor economizado for maior que 0 e até 100: Exibir Viajem de ida e volta pra Praia Grande
+        b.3) Caso o valor economizado seja maior que 100 e menor que 4000: Exibir abaixo da frase de b.2): Uma boa moto usada
+        b.4) Caso o valor economizado é a partir de 4000: Exibir abaixo da frase de b.3): Mais alguma bobagem legal
+-->
+<div>
+    <div>
+        <div>
+            <h4>COM O QUE VOU GASTAR?</h4>
+            <input type="text" id="ipt_compra" placeholder="Financias?">
+            <button onclick="poder()">Poder de compra</button>
+        </div>
+        <div id="div_text"></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var b2 = 'Viajem de ida e volta pra praia Galera!!!'
+    var b3 = b2 + '<br> Com uma moto roubada'
+    var b4 = b3 + '<br> e mais algumas bobagens legais'
+    function poder() {
+        ax_valor = ipt_compra.value
+        if (ax_valor == 0) {
+            div_text.innerHTML = 'Nada de Compras :('
+        } else if (ax_valor >0 && ax_valor <=100) {
+            div_text.innerHTML = b2
+        } else if (ax_valor >100 && ax_valor <=4000) {
+            div_text.innerHTML = b3
+        } else {
+            div_text.innerHTML = b4
+        }
+    }
+</script>

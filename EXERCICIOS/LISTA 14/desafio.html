@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Sr.Hideo</title>
+</head>
+<body>
+    <div id="Pagina1" style="display: block;">
+        <h3>Controle de vendas do Sr.Hideo</h3>
+        Informe quantas caixa o senhor tem Sr.Hideo <br><br>
+        <input type="text" id="ipt_qnt" placeholder="Quantidade de caixas?"><br><br>
+        <button onclick="avançar()">Abrir vendas</button>
+    </div>
+    <div id="Pagina2" style="display: none;">
+        <h3>Controle de vendas do Sr.Hideo</h3>
+
+        Quantidade de morangos vendidos: <br><br>
+        <input type="text" id="ipt_qnt_vendas" placeholder="Quantas?"><span id="span_quantidade"></span><br><br>
+        Valor de cada morango: <br><br>
+        <input type="text" id="ipt_valor_venda" placeholder="Quanto custa?"><span id="span_valor"></span><br><br>
+        <button id="btn_validar" onclick="registrar()">Registrar venda</button>
+        <button onclick="fechar()">Fechar loja</button>
+        <div id="registro_venda"></div>
+        <div id="registro_geral"></div>
+    </div>
+    <div></div>
+</body>
+</html>
+<script>
+    var Caixas = 0
+    var renda = 0
+    var total_vendas = 0
+    var total_caixas_vendidas = 0
+
+    function avançar() {
+
+        var Quantidade = ipt_qnt.value;
+
+        if (Quantidade < 100) {
+            alert('ERRO - Com esse volume de Morangos não da para abrir as vendas')
+            Pagina1.style.display = "block";
+            Pagina2.style.display = "none";
+        } else if (Quantidade >= 2000) {
+            alert('ERRO - Tudo Isso?!?! Verificar se a quantidade esta correta')
+            Pagina1.style.display = "block";
+            Pagina2.style.display = "none";
+        } else if (Quantidade >=100 && Quantidade < 2000) {
+            Caixas = ipt_qnt.value
+            Pagina1.style.display = "none";
+            Pagina2.style.display = "block";
+        }
+        
+
+    }
+    function registrar() {
+
+        var ax_caixas = ipt_qnt_vendas.value
+        var ax_valor = ipt_valor_venda.value
+        
+// QUANDO MENOR Q 20 CAIXAS
+        if (Caixas > ax_caixas && ax_caixas < 20 && ax_valor >=5 && ax_valor <= 6) {
+            Caixas -= ax_caixas
+            total_caixas_vendidas += Number(ax_caixas)
+            total_vendas ++
+            renda += Number(ax_valor * ax_caixas)
+            span_valor.innerHTML = "VALOR OK";
+            registro_venda.innerHTML +=`Com a venda de ${ax_caixas} de caixas de Morango o saldo no restante é de ${Caixas}<br>`
+        } else //{}
+        
+// QUANDO ENTRE 20 E 40 CAIXAS
+        if (Caixas > ax_caixas && ax_caixas >= 20 && ax_caixas <= 40 && ax_valor >=4.50 && ax_valor <= 5.50) {
+            Caixas -= ax_caixas
+            total_caixas_vendidas += Number(ax_caixas)
+            total_vendas ++
+            renda += Number(ax_valor * ax_caixas)
+            span_valor.innerHTML = "VALOR OK";
+            registro_venda.innerHTML +=`Com a venda de ${ax_caixas} de caixas de Morango o saldo no restante é de ${Caixas}<br>`
+        } else //{}
+// QUANDO MAIOR Q 40 CAIXAS
+        if (Caixas > ax_caixas && ax_caixas > 40 && ax_valor >=4 && ax_valor <= 5) {
+            Caixas -= ax_caixas
+            total_caixas_vendidas += Number(ax_caixas)
+            total_vendas ++
+            renda += Number(ax_valor * ax_caixas)
+            span_valor.innerHTML = "VALOR OK";
+            registro_venda.innerHTML +=`Com a venda de ${ax_caixas} de caixas de Morango o saldo no restante é de ${Caixas}<br>`
+        } else {
+            span_valor.innerHTML = "VALOR INVALIDO";
+        }
+    }
+    function fechar() {
+        var media = Number(renda/ total_vendas)
+
+        span_valor.innerHTML = "";
+        span_quantidade.innerHTML = ""; 
+        registro_venda.innerHTML = "";
+        registro_geral.innerHTML = `Venda de Morangos<br>   
+        Saldo de produto = ${Caixas}<br>
+        Volume total vendido = ${total_caixas_vendidas}<br>
+        Valor total das vendas = R$ ${renda}<br>
+        Valor médio das vendas = R$ ${media}<br><br>`
+        if (media >= 5 || Caixas < 100 && total_caixas_vendidas > 1000) { 
+        registro_geral.innerHTML += "O turno hoje foi bom"
+        } else {
+            registro_geral.innerHTML += "O turno hoje foi ruim"
+        }
+        
+    }
+</script>

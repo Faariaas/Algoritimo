@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+12. Crie um programa o qual:
+    a) Solicite a quantidade de filhos que o usuário tem
+
+    b) Tenha um botão "Analisar família". Ao clicar nele...
+
+    c) Caso tenha 1 ou mais filhos, exiba na tela, abaixo do botão, a frase
+	Não tem TV
+
+    d) Caso tenha 2 ou mais filhos, exiba na tela, abaixo da frase em c), a frase
+	Não tem internet
+
+    e) Caso tenha 3 ou mais filhos, exiba na tela, abaixo da frase em d), a frase
+	Não tem video game
+
+    f) Caso tenha 4 ou mais filhos, exiba na tela, abaixo da frase em e), a frase
+	Não tem Netflix
+
+        OBS: Ou seja, caso o usuário informe que tenha, por exemplo 4 ou mais filhos, devem aparecer as seguintes frases:
+        Não tem TV
+        Não tem internet
+        Não tem video game
+        Não tem Netflix
+        Se tiver até 3 filhos, só não aparece a última frase, do Netflix 
+-->
+        <input type="text" id="ipt_filhos" placeholder="Quantas crias">
+        <button onclick="analisar()">Analizar familia</button>
+        <div id="spantext"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var ax_fil = ipt_filhos.value;
+        var ax_tv = 'Não tem TV'
+        var ax_net = 'Não tem internet'
+        var ax_game = 'Não tem Video Game'
+        var ax_netflix = 'Não tem Netflix'
+        if (ax_fil >= 1) {
+            spantext.innerHTML = (ax_tv)
+        }
+        if (ax_fil >= 2) {
+            spantext.innerHTML = (`${ax_tv} <br> ${ax_net}`)
+        }
+        if (ax_fil >= 3) {
+            spantext.innerHTML = (`${ax_tv} <br> ${ax_net} <br> ${ax_game}`)
+        }
+        if (ax_fil >= 4) {
+            spantext.innerHTML = (`${ax_tv} <br> ${ax_net} <br> ${ax_game} <br> ${ax_netflix}`)
+        }
+    }
+</script>

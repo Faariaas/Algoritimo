@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+18. Crie um programa o qual:
+    a) Tenha o seguinte texto no topo:
+        Vida do Lutador: 1000
+    b) Abaixo do texto tenha uma foto de um Lutador em ótima condição
+    c) Tenha os botões "Apanhar" e "Concentrar força"
+    d) Ao clicar no "Apanhar", a vida do Lutador reduz em 100
+    e) Ao clicar no "Concentrar força", a vida do Lutador aumenta em 5%
+    f) Caso a vida do lutador chegue em 0 ou menos, exibir, abaixo do texto de a) a frase Lutador já era! e a foto do Lutador deve mudar para o mesmo personagem, mas todo machucado. Enquanto não chegar em 0, sempre que apanhar ou concentrar força, exiba, no mesmo lugar, a frase Lutador ainda vivo!
+    f) Caso a vida seja 0 ou menos, nenhum dos botões deve mais funcionar
+-->
+<center>
+<div id="img" onchange="ifelse"><img src="kuririn.jpg" height="250px" width="320px"></div><br>
+<!--------------------------------------------------------------------------->
+VIDA:
+<div id="lutador" style="font-size: 45px;">1000</div>
+<!--------------------------------------------------------------------------->
+<button onclick="apanhar()">APANHAR</button>
+<button onclick="vida()">CONCENTRAR FORÇA</button>
+<!--------------------------------------------------------------------------->
+</center>
+</body>
+</html>
+<script>
+    var ax_vida = 1000
+    var ax_bater = 100
+    var ax_rec = +Number(ax_vida * 0.15)
+   
+
+    function apanhar() {
+        ax_vida = ax_vida - ax_bater
+        lutador.innerHTML = ax_vida
+        if (ax_vida >200) {
+        img.innerHTML = (`<img src="kuririn.jpg" height="250px" width="320px">`)
+    } else {
+        if (ax_vida <=200 && ax_vida >= 1) {
+            img.innerHTML = (`<img src="kuririnexplodindo.jpg" height="250px" width="320px">`)
+        } else {
+            img.innerHTML = (`<img src="kuririnmorto.jpg" height="250px" width="320px">`)
+        }
+    }
+    }
+    function vida() {
+        ax_vida = ax_vida + ax_rec
+        lutador.innerHTML = ax_vida
+        if (ax_vida >200) {
+        img.innerHTML = (`<img src="kuririn.jpg" height="250px" width="320px">`)
+    } else {
+        if (ax_vida <=200 && ax_vida >= 1) {
+            img.innerHTML = (`<img src="kuririnexplodindo.jpg" height="250px" width="320px">`)
+        } else {
+            img.innerHTML = (`<img src="kuririnmorto.jpg" height="250px" width="320px">`)
+        }
+    }}
+</script>

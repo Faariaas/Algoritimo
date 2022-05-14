@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head>
+<body>
+    <!--20.	Crie um programa o qual:
+a) Pergunte qual o salário do usuário
+b) Tenha um botão "Confirmar salário". Ao ser clicado, ele deixe aparecendo na tela uma frase assim "Grana atual: R$X.XX"
+c) Tenha um botão "Pagar conta de 100", que, ao ser clicado, ele reduza a "Grana atual" em 100 e atualize essa informação na tela
+d) Tenha um botão "Pagar conta de 500", que, ao ser clicado, ele reduza a "Grana atual" em 500 e atualize essa informação na tela
+e) Tenha um botão "Ganhar 2000 na loteria", que, ao ser clicado, ele aumente a "Grana atual" em 2000 e atualize essa informação na tela
+-->
+<center>
+    <input type="text" id="ipt_sal" placeholder="INFORME O SALARIO"><br>
+    <button onclick="confirm()">Confirmar salario</button><br>
+    <button onclick="cont100()">Pagar conta de 100</button>
+    <button onclick="cont500()">Pagar conta de 500</button><br>
+    <button onclick="lote2000()">Ganhar na teloria</button><br>
+    <br>
+    <div id="spantext"></div>
+</center>
+</body>
+</html>
+<script>
+    function confirm() {
+        spantext.innerHTML = ipt_sal.value
+    }
+    function cont100() {
+        var ax_resultado = Number(spantext.value);
+        ax_resultado -=100;
+        spantext.innerHTML = ax_resultado; 
+    }
+</script>

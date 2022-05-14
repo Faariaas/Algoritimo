@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="conteiner_definicao" id="definicao" style="display: block;">
+    <div>
+        <h3>Qual media de altura para os pilotos</h3>
+        <input type="text" id="menor_piloto" placeholder="Menor Altura">
+        <input type="text" id="maior_piloto" placeholder="Maior Altura">
+    </div>
+    <div>
+        <h3>Qual media de altura para os jogadores de basquete</h3>
+        <input type="text" id="menor_basquete" placeholder="Menor Altura">
+        <input type="text" id="maior_basquete" placeholder="Maior Altura">
+    </div>
+    <button onclick="avancar()">Avançar</button>
+</div>
+
+<div class="container_processo" id="processo" style="display: none;">
+    <h2>PROCESSO DE SELEÇÃO DE NOVOS ATLETAS</h2>
+
+    <h4>Criterio de seleção de Piloto - altura entre <b id="b_pilotomenor">0</b> até <b id="b_pilotomaior">0</b> </h4>
+
+    <h4>Criterio de seleção de Jogador de Basket - altura entre <b id="b_jogadormenor">0</b> até <b id="b_jogadormaior">0</b> </h4>
+
+    <div>
+        Nome do candidato: <input type="text" id="ipt_nome"> <br>
+        Altura do candidato: <input type="text" id="ipt_altura">
+    </div>
+    <div>
+        <select name="" id="sel_modalidade" onchange="model()">
+            <option value="0">--Seleceione a Modalidade--</option>
+            <option value="1">Piloto</option>
+            <option value="2">Jogador de Basquete</option>
+        </select>
+    </div>
+    <div id="div_msg"></div>
+</div>
+
+</body>
+</html>
+<script>
+    var menorPilot = 0
+    var maiorPilot = 0
+    var menorJogador = 0
+    var maiorJogador = 0
+
+    function avancar() {
+        var alturapilotomenor = Number(menor_piloto.value)
+        var alturapilotomaior = Number(maior_piloto.value)
+        var alturajogadormenor = Number(menor_basquete.value)
+        var alturajogadormaior = Number(maior_basquete.value)
+
+        if (alturapilotomenor > 1.0 && alturapilotomaior > alturapilotomenor && alturajogadormenor > 1.5 && alturajogadormaior > alturajogadormenor) {
+            alert('Bora avaliar')
+        b_pilotomenor.innerHTML = alturapilotomenor
+        b_pilotomaior.innerHTML = alturapilotomaior
+        b_jogadormenor.innerHTML = alturajogadormenor
+        b_jogadormaior.innerHTML = alturajogadormaior
+
+        definicao.style.display = "none";
+        processo.style.display = "block";
+        } else {
+            alert('Dados incompativeis')
+        }
+    }
+
+    function model() {
+        if (sel_modalidade.value == 1 && ipt_altura.value >= b_pilotomenor.value || ipt_altura.value <= b_pilotomaior.value) {
+            div_msg.innerHTML = `O candidato ${ipt_nome.value} com altura de ${ipt_altura.value} participará do processo de seleção de piloto`
+        } else {
+            div_msg.innerHTML = `Infelizmente o candidato ${ipt_nome.value} com altura de ${ipt_altura.value} não atende os requisitos`
+        }
+        // O candidato XXXXX com altura de 9,99 participará do processo de seleção de piloto
+        // Infelizmente o candidato XXXXX com altura de 9,99 não atende os requisitos
+        // O candidato XXXXX com altura de 9,99 participará do processo de seleção de jogador de basquete
+        // Infelizmente o candidato XXXXX com altura de 9,99 não atende os requisitos
+    }
+</script>

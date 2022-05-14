@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA06EX11</title>
+    <link rel="stylesheet" href="lista.css">
+</head>
+<body>
+<!--
+    11. Faça um programa o qual:
+
+        a) Pergunte ao usuário o valor de seu saldo na conta do banco
+
+        b) Ao clicar num botão "Verificar finanças"...
+
+	        b.1) Caso o saldo em conta for igual a zero (==0), exiba esta frase na cor preta na tela: "Conta zerada".
+            b.2) Caso o saldo seja negativo (<0), exiba esta frase na cor vermelha na tela: "Está devendo!". 
+	        b.3) Caso o saldo seja positivo (>0), exiba esta frase na cor azul: "Saldo positivo! :)"
+-->
+<div class="banner">
+    <div class="card">
+    <center>
+        <h2 class="cabeça">Banco do Gabs</h2>
+        Qual seu saldo bancario?<br>
+        <input id="ipt_saldo" placeholder="saldo"> <br><br>
+        
+        <button onclick="btn_verificar()">Verificar</button> <br><br>
+            <div id="msg_div"></div>
+        <br><br>
+    </center>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function btn_verificar() { 
+        var ax_sal = ipt_saldo.value
+
+        if (ax_sal == 0) {
+            msg_div.innerHTML = `Vida ta dura neh amigão`
+            } else {
+                if (ax_sal > 0) {
+                msg_div.innerHTML = `BORA GASTA ESSA FORTUNA`
+                } else {
+                msg_div.innerHTML = `Agiota vai te pegar ein amigão`
+            }
+}}
+</script>

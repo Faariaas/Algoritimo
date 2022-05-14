@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTA BOLETIM</title>
+</head>
+<body>
+    <center>
+    <h1>BOLETIM</h1>
+    NOTA DE ALGORITIMO
+    <input id="ipt_nota"><br>
+    <br><br><br>
+    <button onclick="mostrar_avo()">Opnião da Avó</button>
+    <button onclick="mostrar_mae()">Opnião da Mamão</button>
+<br><br><br><br>
+    <div id="spantext"><span></span></div>
+</center>
+</body>
+</html>
+<script>
+    function mostrar_avo() {
+            spantext.innerHTML = `Ó meu netinho preferido, PARABENS pela nota <b style="color: blue;">${ipt_nota.value}</b>, que você tirou, Toma um quebra queixo!!! <br>`
+    }
+    function mostrar_mae() {
+            spantext.innerHTML = `Ta de sacanagem muleque, se tirou <b style="color: blue;">${ipt_nota.value}</b>, só isso, VOU QUEBRAR SEU QUEIXO!!! <br>`
+    }
+</script>

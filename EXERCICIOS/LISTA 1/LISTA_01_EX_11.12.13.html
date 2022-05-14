@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO 13</title>
+</head>
+<body>
+<!--
+11.	Crie um programa que simule a notificação de gols numa partida de futebol assim...
+    a) Tenha um título grande com  a frase "Brasil x Alemanha"
+    b) Abaixo desse título, os botões "Gol do Brasil" e "Gol da Alemanha"
+    c) Abaixo dos botões deve haver um texto em negrito dizendo "Tempo real do jogo:"
+    d) Sempre que o 1º botão for clicado, deve aparecer, a frase
+        É goooolll do Brasil!!!
+    e) Sempre que o 2º botão for clicado, deve aparecer, a frase
+        É goooolll da Alemanha!!!
+    f) Detalhe importante: As frase descritas em d) e e) devem ir de acumulando abaixo do que já existia na página. Ou seja, a primeira vez que clicar em algum dos botões o texto deve ficar abaixo do texto descrito em c). E depois cada vez abaixo do que já existia e assim por diante.
+
+12.	Refaça o programa da questão anterior de tal forma que:
+    a) A frase de gol do Brasil apareça na cor verde
+    b) A frase de gol da Alemanha apareça com cor de fundo vermelho escuro e letra amarela
+
+13.	Refaça o programa da questão anterior de tal forma que:
+    a) Exista um terceiro botão, ao lado dos anteriores, o "Recomeçar partida"
+    b) Ao clicar no novo botão, todos os textos de "gol..." somem  da página (os demais itens, que já estão na página desde o inicio, não somem)
+-->
+    <center>
+        <h1>BRASIL x ALEMANHA</h1>
+        <br><br><br><br>
+        <button onclick="brasil()">GOL DO BRASIL!!!</button>
+        <button onclick="alemanha()">GOL DA ALEMANHA!!!</button><br>
+        <button onclick="deleta()">RECOMEÇAR PARTIDA</button>
+        <br>
+        <b>TEMPO REAL DO JOOGO</b>
+        <br>
+        <span id="spantext"><span></span></span>
+</center>
+</body>
+</html>
+<script>
+    function brasil() {
+        spantext.innerHTML += '<br> <b style="color:green; background-color:yellow">É goooooooooooooooool do BRASIL!!! </b>'
+    }
+    function alemanha() {
+        spantext.innerHTML += '<br> <b style="color:yellow; background-color:red">É goooooooooooooooool do ALEMANHA!!! </b>'
+    }
+    function deleta(){
+        spantext.innerHTML = '';
+    }
+</script>

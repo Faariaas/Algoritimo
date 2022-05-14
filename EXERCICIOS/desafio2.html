@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="ipt_min" placeholder="Menor Numero">
+        <input type="text" id="ipt_max" placeholder="Maior Numero">
+        <button onclick="btn_analizar()">Analizar</button>
+    </div>
+    <div id="div_msg"></div>
+    <div id="final_msg"></div>
+</body>
+</html>
+<script>
+    var minino = 0;
+    
+     function btn_analizar() {
+        var menor = Number(ipt_min.value);
+        var maior = Number(ipt_max.value);
+        minimo = ipt_min.value
+        var primo = 0
+        div_msg.innerHTML = '';
+        if (menor > 0 && maior > menor) {
+            
+            while (menor <= ipt_max.value) {
+                // div_msg.innerHTML += `<br>${menor}`;
+
+                if (menor % 2 != 0 && menor % 3 != 0 && menor % 5 != 0 && menor % 7 != 0 && menor % 11 != 0 && menor % 13 != 0) {
+                     div_msg.innerHTML += `O numero ${menor} não é divisivel pelos principais numeros primos`;
+                }
+                if (menor % 2 == 0) {
+                    div_msg.innerHTML += ` O numero ${menor} é divisivel por 2`;
+                    
+                } 
+                if (menor % 3 == 0) {
+                    div_msg.innerHTML += ` O numero ${menor} é divisivel por 3`;
+                    
+                } 
+                if (menor % 5 == 0) {
+                    div_msg.innerHTML += ` O numero ${menor} é divisivel por 5`;
+                    
+                } 
+                if (menor % 7 == 0) {
+                    div_msg.innerHTML += ` O numero ${menor} é divisivel por 7`;
+                    
+                }
+                if (menor % 11 == 0) {
+                    div_msg.innerHTML += ` O numero ${menor} é divisivel por 11`;
+                    
+                } 
+                if (menor % 13 == 0) {
+                    div_msg.innerHTML += ` O numero ${menor} é divisivel por 13`;
+                    
+                } else {
+                    div_msg.innerHTML += `<br>`;
+                    primo ++
+                }
+                
+                final_msg.innerHTML = `<br> O intervalo de ${minimo} a ${maior} tem ${(maior - minimo) + 1} números, sendo que ${primo} números são divisíveis por algum número primo.`
+                menor++;
+            }
+        }else {
+            alert('numeros invalidos')
+        }
+
+    }
+        
+</script>

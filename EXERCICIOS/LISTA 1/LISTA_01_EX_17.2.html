@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO 17 VERSÃO GOKU</title>
+</head>
+<body>
+<!--
+17.	Crie um programa a qual:
+    a) Tenha um título grande no início "O que faz um triatleta?"
+    b) Tenha os botões "Nada", "Corre" e "Pedala"
+    c) Ao clicar no 1º botão, aparece, abaixo dos botões, a foto de alguém nadando
+    d) Ao clicar no 2º botão, aparece, abaixo dos botões, a foto de alguém correndo
+    e) Ao clicar no 3º botão, aparece, abaixo dos botões, a foto de alguém pedalando
+-->
+    <center>
+        <div><h1>O QUE FAZ UM <b>GOKU</b> TRIATLETA?</h1></div>
+        <br><br>
+        <button onclick="nada()">NADA</button>
+        <button onclick="corre()">CORRE</button>
+        <button onclick="pedala()">PEDALA</button>
+        <br><br>
+        <span id="spantext"><span></span></span>
+</center>
+</body>
+</html>
+<script>
+    function nada() {
+        spantext.innerHTML = '<br> <img src="https://64.media.tumblr.com/tumblr_ls0b7fsqqN1r03wrzo2_400.gifv" alt="" width="500px">';
+    }
+    function corre() {
+        spantext.innerHTML = '<br> <img src="https://c.tenor.com/T-v26iFgFZ0AAAAC/frieza-goku.gif" alt="" width="500px">';
+    }
+    function pedala() {
+        spantext.innerHTML = '<br> <img src="https://i.pinimg.com/originals/6b/a0/c4/6ba0c45d3c0a698f6decb6c52f0c2e4d.gif" alt="" width="500px">';
+    }
+</script>

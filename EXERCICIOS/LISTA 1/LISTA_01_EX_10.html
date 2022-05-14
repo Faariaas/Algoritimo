@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+10.	Refaça o programa da questão anterior de tal forma que cada mensagem tenha cores de fundo e letra diferentes:
+    a) Mensagem do 1º botão: com cor de fundo vermelha e letra branca
+    b) Mensagem do 2º botão: com cor de fundo preta e letra amarela
+    c) Mensagem do 3º botão: com cor de fundo branca e letra verde
+    OBS: Não pode aparecer mais de uma mensagem ao mesmo tempo. Sempre só uma mensagem por vez.
+-->
+     <center>
+    <h3>SEMAFORO</h3>
+    
+    <br><br><br><br>
+    <button onclick="pare()" style="background-color: red; width: 100px; height: 100px;"></button><br>
+    <button onclick="pense()" style="background-color: rgb(255, 238, 0); width: 100px; height: 100px;"></button><br>
+    <button onclick="siga()" style="background-color: rgb(0, 255, 13); width: 100px; height: 100px;"></button><br>
+    <br><br>
+    <span id="spantext"><span></span></span>
+    </center>
+    <!-- CODIGOS TEMPLATES
+    <font size="1-7">FINJA QUE TA VERDE !!!</font>
+    <font size="1-7">ACELERA ESSA BAGAÇA !!!</font>
+    <font size="1-7">ACELERA MAIS AINDA !!!</font>
+    -->
+</body>
+</html>
+<script>
+    function pare() {
+        spantext.innerHTML = '<b><font size="7">FINJA QUE TA VERDE !!!</font></b>';
+    }
+    function pense(){
+        spantext.innerHTML = '<b><font size="7">ACELERA ESSA BAGAÇA !!!</font></b>';
+    }
+    function siga(){
+        spantext.innerHTML = '<b><font size="7">ACELERA MAIS AINDA !!!</font></b></b>';
+    }
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="btn_diga()">Diga algo sobre a quarentena</button>
+    </div>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function btn_diga() {
+        for (var vezes = 1; vezes <= 7; vezes++) {
+            div_msg.innerHTML += `${vezes} - Mortuaia <br>`
+        }
+    }
+</script>

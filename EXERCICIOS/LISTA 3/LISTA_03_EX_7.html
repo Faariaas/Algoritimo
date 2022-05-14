@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONDE MORO</title>
+</head>
+<body>
+    <center>
+    <h1>GPS</h1>
+    RUA/AVENIDA/VILA
+    <input id="ipt_rua"><br>
+    NUMERO DA CASA
+    <input id="ipt_num">
+    <br><br><br>
+    <button onclick="ondmoro()">Onde eu moro?</button>
+<br><br><br><br>
+    <div id="spantext"><span></span></div>
+</center>
+</body>
+</html>
+<script>
+    function ondmoro() {
+            spantext.innerHTML = `Seu logadouro é ${ipt_rua.value} <br>` 
+            spantext.innerHTML += `O número do seu logradouro é ${ipt_num.value}` 
+    }
+</script>

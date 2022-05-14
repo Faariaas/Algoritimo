@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="ipt_vezes" placeholder="quantas vezes patrão?">
+        <input type="text" id="ipt_frase" placeholder="qual a frase patrão?"> <br>
+        <button onclick="btn_alert()">Papagaio</button>
+    </div>
+</body>
+</html>
+<script>
+    function btn_alert() {
+        var ax_quantidade = 0;
+        var ax_vezes = ipt_vezes.value;
+        var ax_frase = ipt_frase.value;
+
+        for (ax_quantidade = 1 ; ax_quantidade <= ax_vezes; ax_quantidade++) {
+            alert(`${ax_frase}`)
+            
+        }
+    }
+</script>

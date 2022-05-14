@@ -1,0 +1,150 @@
+<!--
+9 (desafio). Crie um programa o qual:
+    a) No início tenha somente uma combo com os itens:
+        - Escolha uma espécie -
+        Ovíparos
+        Mamiferos
+    b) Se o usuário escolher o primeiro item, nada acontece e se, eventualmente, tiver algo abaixo da combo, deve desaparecer tudo (ver itens a seguir para entender melhor)
+    c) Se o usuário escolher "Ovíparos", abaixo da combo deve aparecer outra combo com os itens:
+        - Escolha um Ovíparo -
+        Galinha
+        Peixe
+        Tartaruga
+    d) Se o usuário escolher "Mamíferos", abaixo da combo deve aparecer outra combo com os itens:
+        - Escolha um Mamífero -
+        Elefante
+        Porco
+        Coelho
+    e) Após escolher um animal - seja em c), seja em d), uma foto de um exemplar deve aparecer abaixo da combo. Se não for escolhido um animal válido (ou seja, se for escolhido o primeiro item da lista), a foto que estive, eventualmente aparecendo some. Se nenhum estiver sendo mostrada, continua sem mostrar nada
+    f) Também após escolher um animal - seja em c), seja em d), abaixo da imagem descrita em e), deve aparecer um campo de texto solicitando o "Valor de compra do animal"
+    g) Abaixo do campo em f) deve ter um botão "Calcula imposto". Ao clicar nele, aparecer abaixo uma frase como esta:
+        O imposto será de R$X
+        Onde X é:
+        - Caso ovíparo: %5 do valor de compra 
+        - Caso mamífero: %10 do valor de compra
+-->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+<div>
+    <div>
+            <select id="sel_especie" onchange="oncg_especie()">
+            <option value="0">- Escolha uma especie -</option>
+            <option value="1">Oviparo</option>
+            <option value="2">Mamifero</option>
+        </select>
+    </div>
+<br><br>
+    <div>
+        <select id="sel_ovi" style="display: none;" onchange="oncg_ovi()">
+            <option value="0">- Escolha um oviparo -</option>
+            <option value="1">Galinha</option>
+            <option value="2">Peixe</option>
+            <option value="3">Tartaruga</option>
+        </select>
+    </div>
+    <div>
+        <select id="sel_mami" style="display: none;" onchange="oncg_mami()">
+            <option value="0">- Escolha um Mamifero -</option>
+            <option value="1">Elefante</option>
+            <option value="2">Porco</option>
+            <option value="3">Coelho</option>
+        </select>
+    </div>
+<br>
+    <div id="div_image"></div>
+<br><br>
+    <input type="text" id="ipt_valor" placeholder="Valor de compra do animal?" style="display: none;">
+<br>
+    <button id="btn_valor" onclick="btn_calcular()" style="display: none;">Calcular imposto</button>
+<br>
+    <div id="div_msg"></div>
+</div>
+</center>
+</body>
+</html>
+<script>
+    function oncg_especie() {
+        var ax_especie = sel_especie.value
+        if (ax_especie == 0) {
+            document.getElementById('sel_ovi').style.display = "none";
+            document.getElementById('sel_mami').style.display = "none";
+            div_image.innerHTML = ''
+        } else if (ax_especie == 1) {
+            document.getElementById('sel_ovi').style.display = "block";
+            document.getElementById('sel_mami').style.display = "none"
+            div_image.innerHTML = ''
+        } else if (ax_especie == 2) {
+            document.getElementById('sel_mami').style.display = "block";
+            document.getElementById('sel_ovi').style.display = "none"
+            div_image.innerHTML = ''
+        }
+    }
+
+    function oncg_ovi() {
+        var ax_ovo = sel_ovi.value
+        if (ax_ovo == 1 || ax_ovo == 2 || ax_ovo == 3) {
+            document.getElementById('ipt_valor').style.display = "block"
+            document.getElementById('btn_valor').style.display = "block"
+            document.getElementById('div_msg').style.display = "block";
+        } else {
+            document.getElementById('ipt_valor').style.display = "none"
+            document.getElementById('btn_valor').style.display = "none"
+            document.getElementById('div_msg').style.display = "none";
+        }
+        if (ax_ovo == 0) {
+            div_image.innerHTML = ''
+        } else if (ax_ovo == 1) {
+            div_image.innerHTML = ("<img src='galinha.jpg' width=600px; height=400px>")
+        } else if (ax_ovo == 2){
+            div_image.innerHTML = ("<img src='peixe.jpg' width=600px; height=400px>")
+        } else if (ax_ovo == 3) {
+            div_image.innerHTML = ("<img src='tartaruga.jpg' width=600px; height=400px>")
+        }
+    }
+
+    function oncg_mami() {
+        var ax_mamifero = sel_mami.value
+        if (ax_mamifero == 1 || ax_mamifero == 2 || ax_mamifero == 3) {
+            document.getElementById('ipt_valor').style.display = "block"
+            document.getElementById('btn_valor').style.display = "block"
+            document.getElementById('div_msg').style.display = "block";
+        } else {
+            document.getElementById('ipt_valor').style.display = "none"
+            document.getElementById('btn_valor').style.display = "none"
+            document.getElementById('div_msg').style.display = "none";
+        }
+        if (ax_mamifero == 0) {
+            div_image.innerHTML = ''
+        } else if (ax_mamifero == 1) {
+            div_image.innerHTML = ("<img src='elefante.jpg' width=600px; height=400px>")
+        } else if (ax_mamifero == 2){
+            div_image.innerHTML = ("<img src='porco.jpg' width=600px; height=400px>")
+        } else if (ax_mamifero == 3) {
+            div_image.innerHTML = ("<img src='coelho.jpg' width=600px; height=400px>")
+        }
+    }
+    function btn_calcular() {
+        var ax_especie = sel_especie.value
+        var ax_ovo = sel_ovi.value
+        var ax_mamifero = sel_mami.value
+
+        var impostoOvi = Number(ipt_valor.value * 0.05)
+        var impostoMami = Number(ipt_valor.value * 0.15)
+
+        if (ax_ovo == 1 || ax_ovo == 2 || ax_ovo == 3) {
+            div_msg.innerHTML = `O imposto sera de R$${impostoOvi}`
+
+
+        } else if (ax_mamifero == 1 || ax_mamifero == 2 || ax_mamifero == 3) {
+            div_msg.innerHTML = `O imposto sera de R$${impostoMami}`
+        }
+    }
+</script>

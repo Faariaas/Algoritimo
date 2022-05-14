@@ -1,0 +1,82 @@
+.banner{
+    height: 400px 400px;
+    display: flex;
+    background-size: cover;
+    background-image: url('zoio.jpg');
+}
+.card {
+    background-color: rgb(12, 179, 151);
+    height: 300px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.box {
+    animation: fadein 10s;
+    color: chocolate;
+    background-color: #000000;
+    height: 250px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+body {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+h2{
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        /* fundo gradiente */
+        background-image: linear-gradient(#ff0000, #06d6d6);
+        /* agora colocamos o fundo gradiente dentro do texto com essa propriedade */
+        background-clip: text;
+        -webkit-background-clip: text;
+        /* a cor do texto deve estar como transparent */
+        color: transparent;
+      }
