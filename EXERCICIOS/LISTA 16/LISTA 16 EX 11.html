@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="ipt_preco" placeholder="Qual preço?">
+        <button onclick="cad()">Cadastrar</button>
+        <br>
+        <button onclick="att()">Atualizar estoque</button>
+    </div>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var vt_total = []
+
+    function cad() {
+        var preco = Number(ipt_preco.value)
+
+        vt_total.push(Number(ipt_preco.value))
+        ipt_preco.value = ""
+    }
+
+    function att() {
+        var index = 0
+        var ax_total = 0
+        var preco = Number(ipt_preco.value)
+
+        for (; index < vt_total.length; index++) {
+
+            ax_total += vt_total[index];
+            
+        }
+        div_msg.innerHTML = `<b>Você tem ${vt_total.length} Produtos cadastrados em estoque
+        <br>
+        Seu estoque vale ${ax_total}</b>`
+    }
+</script>
