@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="ipt_projetos" placeholder="Quais projetos se ja fez parça?">
+        <button onclick="registrar()">Registar</button>
+        <br>
+        <button onclick="mostrar()">Mostrar Projeto</button>
+    </div>
+    <div style="display: flex;">
+        <div id="txt" style="display: none;">Voce já fez <span id="quant"></span> projetos. por isso você é um profissional <span id="prof"></span></div>
+        <div id="projetos"></div>
+    </div>
+    <!-- <span style="text-transform: uppercase;"></span> -->
+</body>
+</html>
+<script>
+    var vt_projetos = []
+
+    var ax_total = 0
+
+    function registrar() {
+        var ax_proj = ipt_projetos.value
+
+        vt_projetos.push(ipt_projetos.value)
+        ipt_projetos.value = ""
+
+        ax_total++
+
+        if (ax_total >= 13) {
+            txt.style.display = "block";
+            quant.innerHTML = ax_total
+            prof.innerHTML = `Senior desde o projeto ${vt_projetos[12]}`
+        } else if (ax_total >4 && ax_total <13) {
+            txt.style.display = "block";
+            quant.innerHTML = ax_total
+            prof.innerHTML = `Pleno desde o projeto ${vt_projetos[4]}`
+        } else if (ax_total >= 0 && ax_total < 5) {
+            txt.style.display = "block";
+            quant.innerHTML = ax_total
+            prof.innerHTML = `Junior`
+        }
+        
+    }
+</script>
