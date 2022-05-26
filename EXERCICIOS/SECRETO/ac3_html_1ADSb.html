@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC3_1CCO</title>
+</head>
+
+<body>
+    <h2>Manoel Combustíveis</h2>
+    Entre com a quantidade de Anidro na gasolina: <input id="ipt_temp">
+    <button onclick="cadastrar()">Registrar</button> <br><br>
+
+    Entre com o número de uma ocorrência: <input id="ipt_ocor">
+    <button onclick="verificar()">Verificar</button> <br>
+    <div id="div_ocor"></div><br><br>
+
+    Intervalo de ocorrências para análise
+    <input id="ipt_ocor_de"> <input id="ipt_ocor_ate">
+    <button onclick="ocorrencias()">Analisar Ocorrências</button> <br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    vt_qtde = [];
+
+    function cadastrar() {
+        var adrino = Number(ipt_temp.value)
+
+        if (adrino >= 22 && adrino <= 24) {
+            vt_qtde.push(ipt_temp.value)
+            alert('Perfeito!!! Essa é a quantidade ideal!!!')
+
+        } else if (adrino >= 20 && adrino < 22 || adrino > 24 && adrino <= 27) {
+            vt_qtde.push(ipt_temp.value)
+
+        } else if (adrino < 20) {
+            alert('Tem algo errado com essa gasolina!!!')
+
+        } else if (adrino > 27) {
+            alert('Interromper o processo, gasolina batizada!!!')
+
+        }
+        
+    }
+
+    function verificar() {
+        var ocorrencia = Number(ipt_ocor.value)
+        if (ocorrencia <= vt_qtde.length) {
+            // div_ocor.innerHTML = `Na ocorrência ${ocorrencia} a quantidade de Anidro registrada é ${Number(vt_qtde.length[ocorrencia]).toFixed(1)}`
+            for (let index = 0; index < vt_qtde.length; index++) {
+                div_ocor.innerHTML = `Na ocorrência ${ocorrencia} a quantidade de Anidro registrada é ${Number(vt_qtde[ocorrencia-1]).toFixed(1)}`;
+            }
+        } else {
+        div_ocor.innerHTML = `A ocorrência ${ocorrencia} não foi registrada`
+        }
+        
+    }
+
+    function ocorrencias() {
+        var de = Number(ipt_ocor_de.value) - 1
+        var ate = Number(ipt_ocor_ate.value) - 1
+        var menor = 100
+        var maior = 0
+        var ax_media = 0
+        var contador = 0
+
+        
+        if (ate > de && ate <= vt_qtde.length && de >= 0) {
+            div_msg.innerHTML = ``
+            for (let index = de; index <= ate; index++) {
+                ax_media =+ vt_qtde[index]
+                contador ++
+                if (menor > vt_qtde[index]) {
+                    menor = vt_qtde[index]
+                }
+                if (maior < vt_qtde[index]) {
+                    maior = vt_qtde[index]
+                }
+                
+                div_msg.innerHTML += `A ocorrencia ${index + 1} tem registrada a quantidade de Adrino de:${Number(vt_qtde[index])}<br>`
+            }
+                
+                div_msg.innerHTML += `<b>Resumo do intervalo de ocorrências<br>`
+                div_msg.innerHTML += `Inicial:${de + 1}    Final:${ate + 1}<br>`
+                div_msg.innerHTML += `Menor Quantidade do intervalo:${menor}<br>`
+                div_msg.innerHTML += `Maoir quantidade do intervalo:${maior}<br>`
+                div_msg.innerHTML += `Média das quantidades do intervalo:${ax_media/contador}`
+                div_msg.innerHTML += `<br><br><br>O professor FRIZZA é nota <b>10</b>!!!`
+
+        } else if (vt_qtde.length == 0) {
+            alert('ERRO - Antes de Analisar faça o cadastro das quantidades de Anidro')
+        } else {
+            alert('ERRO - Não foi encondrado dados nesse intervalo')
+        }
+    }
+</script>
